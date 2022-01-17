@@ -1,5 +1,4 @@
 import './App.css';
-import PostLiked from './PostLiked';
 import ReactPost from './ReactPost';
 import { useState } from 'react';
 
@@ -14,13 +13,11 @@ function App() {
   const [questions, setQuestions] = useState(data);
   return (
     <main>
-      <h1>En smula kunskap om ReactJS</h1>
+      <h1 className='main-header'>ReactJS </h1>
       <div className="container">
-        <section className="info">
           {questions.map((question) => {
             return <ReactPost key={data.question} {...question} />;
           })}
-        </section>
       </div>
       <strong>&copy; Copyright 2022 Author: Aleksandra Los</strong>
     </main>
