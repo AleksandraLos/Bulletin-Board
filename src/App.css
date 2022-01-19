@@ -4,6 +4,9 @@ main{
     font-family: 'Comic Neue', cursive;
     background-color: #F9F3DF;
 }
+.hide{
+    display:none;
+}
 .main-header{
     padding: 10%;
     background-image: url("https://www.paragyte.com/img/React_Banner.png") ;

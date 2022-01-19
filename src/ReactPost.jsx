@@ -6,17 +6,26 @@ import {BsFillCaretDownFill} from'react-icons/bs';
 
 const ReactPost = ({ question, answer }) => {
   const [showInfo, setShowInfo] = useState(false);
-  const [likePost, setLikePost] = useState(false);
+  const [postLiked, setPostLiked] = useState(false);
 
   return (
     <article className="question">
       <header>
         <h5>{question}</h5>
-        <button className='ansver'onClick={() => setShowInfo(!showInfo)}><BsFillCaretDownFill /></button>
-      </header>
-
-      {showInfo && <p>{answer}<button className='like' onClick={() => setLikePost(!likePost)}>Like <FcLike /></button></p>};
-      {likePost && <PostLiked />}
+        <button className="ansver" onClick={() => setShowInfo(!showInfo)}>
+          <BsFillCaretDownFill />
+        </button>
+        </header>
+        {showInfo && <p>{answer} <button
+          className={postLiked ? "hide" : null}
+          onClick={() => setPostLiked(true)}
+        >
+          Like it!
+          <FcLike />
+        </button>
+        </p>}
+      
+      {postLiked && <PostLiked />}
     </article>
   );
 };
